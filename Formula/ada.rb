@@ -7,7 +7,7 @@ class Ada < Formula
   on_macos do
     on_arm do
       url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.2/ada-0.1.2-darwin-arm64.tar.gz"
-      sha256 "00b734bbdf1ddac268c71e03ce2225ea732cbe979e2991f6c842615fe7df7917"
+      sha256 "b21d7d72bf51931011dac6227acf792983267c6b3378aba25e0b6ee665450a8d"
     end
     on_intel do
       url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.2/ada-0.1.2-darwin-x64.tar.gz"
