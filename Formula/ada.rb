@@ -1,30 +1,22 @@
 class Ada < Formula
   desc "The AI research agent for the terminal"
   homepage "https://thinkwithada.com"
-  url "https://github.com/saikrishnabolla/ada/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  version "0.1.0"
   license "Apache-2.0"
 
-  depends_on "node@20"
+  on_macos do
+    on_arm do
+      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.0/ada-0.1.0-darwin-arm64.tar.gz"
+      sha256 "2db80cef3694f69e15804ad4657c1c91c28f8467c804bb441aca6ef6234b655c"
+    end
+  end
 
   def install
-    system "npm", "install", "--ignore-scripts", "--no-audit", "--no-fund"
-    system "npm", "run", "build"
-
-    # Install everything to libexec
+    # The native bundle includes Node.js — no external dependency needed
     libexec.install Dir["*"]
-    libexec.install ".ada"
 
-    # Re-run npm install in libexec to get node_modules in the right place
-    cd libexec do
-      system "npm", "install", "--ignore-scripts", "--no-audit", "--no-fund", "--production"
-    end
-
-    # Create wrapper script that calls the real binary
-    (bin/"ada").write <<~EOS
-      #!/bin/bash
-      exec "#{Formula["node@20"].opt_bin}/node" "#{libexec}/bin/ada.js" "$@"
-    EOS
+    # Symlink the launcher
+    bin.install_symlink libexec/"ada"
   end
 
   test do
