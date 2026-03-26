@@ -1,24 +1,24 @@
 class Ada < Formula
   desc "The AI research agent for the terminal"
   homepage "https://thinkwithada.com"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.1/ada-0.1.1-darwin-arm64.tar.gz"
-      sha256 "96b2300da6378d42d87655a32c8e22320c5d1ecfe0c23a1443252d846bd1e7fb"
+      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.2/ada-0.1.2-darwin-arm64.tar.gz"
+      sha256 "5cfc0d51e0b9481ba04a6e3cf9702208807ae81f37c67daa9cee19689db7bf85"
     end
     on_intel do
-      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.1/ada-0.1.1-darwin-x64.tar.gz"
-      sha256 "161eeb46cb72b37d3b936c02d7446024e32eaf5f3ec099818428d4c95d9480a0"
+      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.2/ada-0.1.2-darwin-x64.tar.gz"
+      sha256 "0618dfef5601643b06aaeda23acb91a41976aa6a7cb767ccfa74551f9f82f2e8"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.1/ada-0.1.1-linux-x64.tar.gz"
-      sha256 "f1543d56dc208d5468a95866990e696bfb05bc2d014dd02742c922ecbd1494fc"
+      url "https://github.com/saikrishnabolla/homebrew-tap/releases/download/v0.1.2/ada-0.1.2-linux-x64.tar.gz"
+      sha256 "1ce3f9dafab7843b9ed36248e4084e7cb3ee2606bc4fb6d71a0ff8b9ce32ec5f"
     end
   end
 
