@@ -12,11 +12,12 @@ class Ada < Formula
   end
 
   def install
-    # The native bundle includes Node.js — no external dependency needed
     libexec.install Dir["*"]
 
-    # Symlink the launcher
-    bin.install_symlink libexec/"ada"
+    (bin/"ada").write <<~EOS
+      #!/bin/bash
+      exec "#{libexec}/node/bin/node" "#{libexec}/app/bin/ada.js" "$@"
+    EOS
   end
 
   test do
